@@ -1,6 +1,6 @@
-# Laravel 8 使用建立指令建立測試案例
+# Laravel 10 使用建立指令建立測試案例
 
-引入 iak 的 make-testable 套件來擴增建立任何類別的測試案例，只要在命令列上執行 __phpunit__，就可以進行測試。
+`Artisan` 是內建的指令集合，它能提供許多好用的指令來協助你開發程式，方便在建立實例，同時建立相對應測試案例，若要執行測試，只要在終端機執行 __Artisan__ 指令的 __test__ 來進行測試。
 
 ## 使用方式
 - 把整個專案複製一份到你的電腦裡，這裡指的「內容」不是只有檔案，而是指所有整個專案的歷史紀錄、分支、標籤等內容都會複製一份下來。
@@ -16,17 +16,24 @@ $ composer install
 ```sh
 $ php artisan key:generate
 ```
-- 執行 __Artisan__ 指令的 __make__ 來建立類別，並同時建立該類別測試案例。
+- 執行 __Artisan__ 指令的 __migrate__ 來執行所有未完成的遷移。
 ```sh
-$ php artisan make:{類別} {類別名稱} --test
+$ php artisan migrate
 ```
-- 執行 __phpunit__ 進行測試，在不同的測試類型中，所需要保護的面向不太相同。
+- 執行 __Artisan__ 指令的 __make__ 來建立實例，並同時建立該實例測試案例。
 ```sh
-$ vendor/bin/phpunit
+$ php artisan make:{實例} {實例名稱} --test
+```
+- 執行 __Artisan__ 指令的 __test__ 來進行測試，在不同的測試類型中，所需要保護的面向不太相同。
+```sh
+$ php artisan test
 ```
 
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/7wf6rN2.png)
-> 測試的方法很簡單，就是把參數丟給函數或方法，然後檢測它執行的結果是否符合預期
+![](https://i.imgur.com/EA5RDEK.png)
+> 在功能測試目錄建立測試
+
+![](https://i.imgur.com/IfQuClZ.png)
+> `Artisan` 的測試執行程式會提供較多輸出的測試報告，以讓我們能更輕鬆地進行開發與偵錯
