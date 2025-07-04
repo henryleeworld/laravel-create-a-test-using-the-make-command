@@ -1,4 +1,4 @@
-# Laravel 10 使用建立指令建立測試案例
+# Laravel 11 使用建立指令建立測試案例
 
 `Artisan` 是內建的指令集合，它能提供許多好用的指令來協助你開發程式，方便在建立實例，同時建立相對應測試案例，若要執行測試，只要在終端機執行 __Artisan__ 指令的 __test__ 來進行測試。
 
@@ -32,8 +32,8 @@ $ php artisan test
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/EA5RDEK.png)
+![](https://i.imgur.com/NJmkVhc.png)
 > 在功能測試目錄建立測試
 
-![](https://i.imgur.com/IfQuClZ.png)
+![](https://i.imgur.com/jqqnzaM.png)
 > `Artisan` 的測試執行程式會提供較多輸出的測試報告，以讓我們能更輕鬆地進行開發與偵錯

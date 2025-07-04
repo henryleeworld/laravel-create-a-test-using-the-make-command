@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Article extends Model
 {
@@ -12,7 +14,7 @@ class Article extends Model
     /**
      * The attributes that are mass assignable.
      *
-     * @var array
+     * @var array<int, string>
      */
     protected $fillable = [
         'slug',
@@ -22,17 +24,18 @@ class Article extends Model
         'user_id',
     ];
 
-    public function user()
+    /**
+     * Get the user that owns the article.
+     */
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
     /**
-     * Create favorites relationship with users
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     * The favorites that belong to the article.
      */
-    public function favorites()
+    public function favorites(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'user_favorite');
     }
