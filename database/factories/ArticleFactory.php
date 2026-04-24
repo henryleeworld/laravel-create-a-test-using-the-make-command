@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Article>
  */
 class ArticleFactory extends Factory
 {
@@ -20,7 +20,7 @@ class ArticleFactory extends Factory
     {
         return [
             'title'       => $title = fake()->sentence,
-            'slug'        => Str::slug($title),
+            'slug'        => Str::slug($title, language: app()->getLocale()),
             'description' => fake()->paragraph,
             'body'        => fake()->paragraphs(3, true),
             'user_id'     => User::all()->random(),
