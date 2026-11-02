@@ -18,7 +18,7 @@ class ArticleTest extends TestCase
         $this->assertInstanceOf(User::class, $article->user()->getRelated());
     }
 
-    public function test_it_can_be_favorited_by_users()
+    public function test_can_be_favorited_by_users()
     {
         $article = new Article();
 

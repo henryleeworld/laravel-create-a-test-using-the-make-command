@@ -9,7 +9,7 @@ use Tests\TestCase;
 
 class UserTest extends TestCase
 {
-    public function test_it_has_favorite_articles_relationship()
+    public function test_has_favorite_articles_relationship()
     {
         $user = new User();
         $this->assertInstanceOf(BelongsToMany::class, $user->favoriteArticles());
